@@ -1,0 +1,66 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-color: burlywood;
+    width: 100vw;
+    height: 100vh;
+    list-style: square;
+}
+
+#banner{
+    height: 30px;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background-color: sienna;
+}
+
+#nav{
+    width: 100%;
+    position: fixed;
+    top: 30px;
+    display: flex;
+    flex-direction: row;
+}while($row = mysqli_fetch_assoc($flimy)) {
+    echo $row["tytul"]."<br>";
+}
+.guznav{
+    background-color:darkgoldenrod;
+    border: none;
+    width: 100%;
+    transition-duration: 0.4s;
+}
+
+.guznav:hover{
+    background-color: goldenrod;
+}
+
+#widok{
+    position: fixed;
+    top: 45px;
+    width: 100%;
+    height: 100%;
+}
+
+iframe{
+    width: 100%;
+    height: 100%;
+
+    list-style: square;
+}
+
+#stopka{
+    background-color: sienna;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+table{
+    border: solid green 10px;
+}
+
