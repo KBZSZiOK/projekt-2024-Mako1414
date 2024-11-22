@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kino</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div id="banner">
+        <img src="logo_zsio.png" id="logo"> KINO ZSZIOK
+    </div>
+    
+    <div id="nav">
+        <button id="kino" class="guznav">Strona główna</button>
+        <button id="tabele" class="guznav">Tabele</button>
+        <button id="form" class="guznav">Formularz</button>
+    </div>
+
+    <div id="pasekwidok">
+        <div id="pasek">Popcorn, prażona kukurydza, orzeszki w karmelu, naczosy z serem!</div>
+    </div>
+    
+    <div id="widok">
+        <iframe id="frame" src="http://127.0.0.1/4Tig1/kino.php"></iframe>
+    </div>
+
+    <div id="stopka">stopka</div>
+    
+    <script>
+        const frame = document.getElementById("frame");
+        const guziki = document.querySelectorAll("button");
+
+        guziki.forEach(element => {
+            element.addEventListener("click", function(){
+                frame.src = "http://127.0.0.1/4Tig1/"+element.id+".php";
+            })
+        });
+
+        const pasek = document.getElementById('pasek');
+
+        let pozycja = 0;
+
+        function Animacja(){
+            pozycja+= 10;
+
+            if(pozycja > window.innerWidth){
+                pozycja = -pasek.offsetWidth;
+            }
+            pasek.style.left = pozycja + 'px';
+        
+            requestAnimationFrame(Animacja);
+        }
+
+        Animacja();
+    </script>
+</body>
+</html>
